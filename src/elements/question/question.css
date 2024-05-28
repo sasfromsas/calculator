@@ -1,0 +1,27 @@
+.question{
+    width: 45%;
+    height: 100px;
+    /* text-align: center; */
+    padding: 5px;
+}
+
+label{
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 26px;
+    /* text-align:start;  */
+}
+
+@media screen and (width <= 888px ) {
+  label{
+    font-size: 18px;
+  }
+}
+
+@media screen and (width <= 400px ) {
+  label{
+    font-size: 14px;
+  }
+}
