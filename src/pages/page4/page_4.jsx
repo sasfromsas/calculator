@@ -1,12 +1,8 @@
 import React from 'react';
-// import Question from '../../elements/question/question';
 import '../questionBox.css'
 import './page_4.css'
 
 function Page_4({ calculateTotalCost, totalCost, startAgain, onSubmit   }) {
-  // const handleCalculate = () => {
-  //   alert(`Итоговая стоимость: $${totalCost}`);
-  // };
 
   return (
     <div>

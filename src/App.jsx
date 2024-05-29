@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Page_1 from './pages/page1/page_1';
 import Page_2 from './pages/page2/page_2';
 import Page_3 from './pages/page3/page_3';
 import Page_4 from './pages/page4/page_4';
 import './app.css';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import Swiper from 'swiper';
-// import 'swiper/swiper-bundle.css';
 
 
 function App() {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [totalCost, setTotalCost] = useState(0)
-  // const [swiper, setSwiper] = useState(null);
   const [currentPage, setCurrectPage] = useState(0)
 
   const updateSelectedOptions = (option, isSelected) => {
@@ -41,11 +37,10 @@ function App() {
     .then(data => {
       console.log('Success:', data);
       alert('Успешно отправлено в БД')
-
-      // Можно добавить дополнительную логику после успешной отправки, например, показать сообщение об успешной отправке
     })
     .catch((error) => {
       console.error('Error:', error);
+      alert('Ошибка отправления в БД')
     });
     startAgain()
   };
@@ -73,17 +68,13 @@ function App() {
   return (
       <body>
       <div className="main">
-
-      
-      <h1>Онлайн-калькулятор</h1>
-      
+        <h1>Онлайн-калькулятор</h1>
         {currentPage === 0 && <Page_1 updateSelectedOptions={updateSelectedOptions} selectNextPage={selectNextPage} />}
         {currentPage === 1 && <Page_2 updateSelectedOptions={updateSelectedOptions} selectNextPage={selectNextPage}/>}
         {currentPage === 2 && <Page_3 updateSelectedOptions={updateSelectedOptions} selectNextPage={selectNextPage} calculateTotalCost={calculateTotalCost}/>}
         {currentPage === 3 && <Page_4 updateSelectedOptions={updateSelectedOptions} selectNextPage={selectNextPage} totalCost={totalCost} startAgain={startAgain} onSubmit={sendOrderToDatabase}/>}
-
-      
-      {/* для тестов */}
+        
+        {/* для тестов */}
        {/* <div>
        текущий слайд {currentPage}
       
@@ -94,8 +85,7 @@ function App() {
           ))}
         </ul>
        </div> */}
-
-      
+       
       </div>
       </body>
     
